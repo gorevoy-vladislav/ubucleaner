@@ -62,6 +62,7 @@ if [ "$1" != "-auto" ]; then
     if [[ $response =~ ^(yes|y| ) ]]; then
 
       deborphan | xargs apt-get -y remove --purge
+      deborphan --guess-data | xargs apt-get -y remove --purge
 
     fi
 
