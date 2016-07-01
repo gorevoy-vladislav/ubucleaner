@@ -3,7 +3,7 @@
 # Andrew Pennebaker
 # 9 Mar 2011
 #
-# Gorevoy Vladislav
+# Vladislav Gorevoy
 # 2 Jul 2016
 #
 # From openDesktop
