@@ -37,5 +37,12 @@ rm -rf /root/.local/share/Trash/*/** &> /dev/null
 echo -e $YELLOW"Autoremove old packet..."$ENDCOLOR
 apt-get autoremove
 
+echo -e $YELLOW"Cleaning with deborphan..."$ENDCOLOR
+while [ -n "`deborphan`" ]; do
+    deborphan
+    echo
+    apt-get purge `deborphan`
+done
+
 echo -e $YELLOW"Script Finished!"$ENDCOLOR
 df -h
