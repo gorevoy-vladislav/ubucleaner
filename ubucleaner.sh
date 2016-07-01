@@ -61,11 +61,7 @@ if [ "$1" != "-auto" ]; then
     response=${response,,}
     if [[ $response =~ ^(yes|y| ) ]]; then
 
-      while [ -n "`deborphan`" ]; do
-        deborphan
-        echo
-        apt-get purge 'deborphan'
-      done
+      deborphan | xargs apt-get -y remove --purge
 
     fi
 
